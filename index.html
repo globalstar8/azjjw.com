@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garry's Posthaven</title>
+    <title>Essays - Andrew's Posthaven</title>
     <style>
         * {
             margin: 0;
@@ -16,505 +16,164 @@
             line-height: 1.6;
             color: #333;
             background-color: #f5f5f5;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            min-height: 100vh;
-        }
-
-        header {
-            padding: 20px 40px;
-            border-bottom: 1px solid #eee;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        nav a {
-            color: #666;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #333;
-        }
-
-        .site-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        main {
             padding: 40px;
-        }
-
-        .post {
-            margin-bottom: 40px;
-        }
-
-        .post-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .post-meta {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .video-container {
-            margin: 20px 0;
-            position: relative;
-        }
-
-        .video-placeholder {
-            background: #000;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
             border-radius: 8px;
-            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .video-title {
+        .page-title {
             font-size: 32px;
             font-weight: bold;
-            margin-bottom: 10px;
+            color: #8B4513;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .video-subtitle {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff4444;
-        }
-
-        .video-note {
-            position: absolute;
-            left: -60px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 12px;
-            color: #666;
-            background: white;
-            padding: 5px 8px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        .post-content {
-            font-size: 16px;
-            line-height: 1.7;
-            margin: 20px 0;
-        }
-
-        .timestamps {
-            background: #f8f8f8;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 20px 0;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .social-buttons {
-            margin: 20px 0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-comment {
-            background: #4267B2;
-            color: white;
-        }
-
-        .btn-share {
-            background: #1da1f2;
-            color: white;
-        }
-
-        .sidebar-note {
-            position: absolute;
-            right: -80px;
-            font-size: 12px;
-            color: #666;
-            background: white;
-            padding: 5px 8px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            width: 70px;
-        }
-
-        .email-signup {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: #f8f8f8;
-            border-radius: 8px;
-        }
-
-        .email-signup h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .email-signup p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .email-input {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .email-input input {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            width: 250px;
-        }
-
-        .email-note {
-            font-size: 12px;
-            color: #666;
-            margin-left: 10px;
-        }
-
-        .author-section {
-            text-align: center;
-            padding: 30px;
-            background: #f8f8f8;
-            border-radius: 8px;
-            margin: 40px 0;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #4267B2;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .author-name {
+        .intro-text {
             font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            color: #333;
         }
 
-        .author-title {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .search-section {
-            margin: 40px 0;
-        }
-
-        .search-title {
-            font-size: 16px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .search-note {
-            position: absolute;
-            left: -60px;
-            font-size: 12px;
-            color: #666;
-            background: white;
-            padding: 5px 8px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .links-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 40px 0;
-        }
-
-        .links-column h4 {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .links-column ul {
-            list-style: none;
-        }
-
-        .links-column li {
-            margin-bottom: 8px;
-        }
-
-        .links-column a {
-            color: #4267B2;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .links-column a:hover {
+        .intro-text a {
+            color: #0066CC;
             text-decoration: underline;
         }
 
-        .tags-section {
-            margin: 40px 0;
+        .intro-text a:hover {
+            color: #004499;
         }
 
-        .tags-title {
-            font-size: 16px;
-            margin-bottom: 15px;
+        .essay-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .essay-item {
+            margin-bottom: 8px;
+            padding-left: 20px;
             position: relative;
         }
 
-        .tags-note {
+        .essay-item::before {
+            content: "■";
             position: absolute;
-            right: -80px;
-            font-size: 12px;
+            left: 0;
             color: #666;
-            background: white;
-            padding: 5px 8px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
+            font-size: 12px;
+            top: 2px;
         }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .essay-link {
+            color: #0066CC;
+            text-decoration: underline;
+            font-size: 16px;
+            line-height: 1.5;
+            display: inline-block;
         }
 
-        .tag {
-            background: #e9ecef;
-            color: #666;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
+        .essay-link:hover {
+            color: #004499;
             text-decoration: none;
         }
 
-        .tag:hover {
-            background: #dee2e6;
+        .essay-link:visited {
+            color: #551A8B;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
+        /* Special styling for the first few featured links */
+        .featured-links {
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            color: #0066CC;
+            text-decoration: none;
             font-size: 14px;
+            margin-right: 20px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .navigation {
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            .container {
-                margin: 0 20px;
+            body {
+                padding: 20px 10px;
             }
             
-            main {
+            .container {
                 padding: 20px;
             }
             
-            .video-note,
-            .sidebar-note,
-            .search-note,
-            .tags-note {
-                position: static;
-                margin-bottom: 10px;
-                width: auto;
+            .page-title {
+                font-size: 24px;
             }
             
-            .links-section {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .intro-text {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About Me</a>
+        <header class="header">
+            <h1 class="site-title">ANDREW JIN</h1>
+            <nav class="navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="articles.html" class="nav-link">Essays</a>
+                <a href="#about" class="nav-link">About Me</a>
             </nav>
-            <h1 class="site-title">GARRY'S POSTHAVEN</h1>
         </header>
 
         <main>
-            <article class="post">
-                <h2 class="post-title">Micromanagement is toxic: Delegation is the cure (6 simple steps)</h2>
-                <div class="post-meta">Posted a year ago on Jul 27, 2022 at 8:17 AM • 965 views</div>
-                
-                <div class="video-container">
-                    <div class="video-note">Auto video embeds by just pasting a link</div>
-                    <div class="video-placeholder">
-                        <div class="video-title">A founder's choice</div>
-                        <div class="video-subtitle">DELEGATION or DISRESPECT</div>
-                    </div>
-                </div>
-
-                <div class="post-content">
-                    <p>One of my direct reports once told me in a 1:1 early in my career as a founder: "I've never felt so disrespected in my career." This was a wake-up call. I wasn't delegating, and we weren't aligned on goals and values. I was micromanaging, and second guessing everyone. In this video we talk about what it takes to be a great leader: a conductor of people who drive greatness.</p>
-                </div>
-
-                <div class="timestamps">
-                    00:00 Intro: My management mistake<br>
-                    00:58 Hire and delegate to get more time<br>
-                    02:59 How to delegate in 6 simple steps<br>
-                    04:38 Delegation's shadow: Micromanagement<br>
-                    05:39 If delegation fails, ask the deeper questions<br>
-                    06:21 Great teams are terrible managers at times when I fail to delegate or align<br>
-                    07:04 Conclusion: Be a conductor of people
-                </div>
-
-                <div class="social-buttons">
-                    <div class="sidebar-note">Comments and sharing</div>
-                    <a href="#" class="btn btn-comment">COMMENT</a>
-                    <a href="#" class="btn btn-share">SHARE</a>
-                    <div style="margin-left: 10px;">
-                        <span style="background: #4267B2; color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px;">Like</span>
-                        <span style="background: #4267B2; color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px; margin-left: 5px;">Share</span>
-                    </div>
-                </div>
-            </article>
-
-            <section class="email-signup">
-                <h3>Subscribe by email</h3>
-                <p>Get email alerts about new posts. Unsubscribe anytime.</p>
-                <div class="email-input">
-                    <input type="email" placeholder="Email Address">
-                    <span class="email-note">Create a mailing list</span>
-                </div>
-            </section>
-
-            <section class="author-section">
-                <div class="author-avatar">GT</div>
-                <div class="author-name">Garry Tan</div>
-                <div class="author-title">Managing Partner, Initialized Capital</div>
-                <div class="author-title">Cofounder, Posthhaven</div>
-                <div class="author-title">Writes software, dreams.</div>
-            </section>
-
-            <section class="search-section">
-                <h3 class="search-title">
-                    <span class="search-note">Site search</span>
-                    Browse the archive
-                </h3>
-                <input type="search" class="search-input" placeholder="Search this site...">
-            </section>
-
-            <section class="links-section">
-                <div class="links-column">
-                    <div style="position: relative;">
-                        <span style="position: absolute; left: -80px; font-size: 12px; color: #666; background: white; padding: 5px 8px; border-radius: 4px; border: 1px solid #ddd;">Links and blogroll</span>
-                        <h4>Startups I like</h4>
-                    </div>
-                    <ul>
-                        <li><a href="#">Walst</a></li>
-                        <li><a href="#">Coinbase</a></li>
-                        <li><a href="#">Sift Science</a></li>
-                        <li><a href="#">Heap Analytics</a></li>
-                    </ul>
-                </div>
-                <div class="links-column">
-                    <ul style="margin-top: 28px;">
-                        <li><a href="#">Gobble</a></li>
-                        <li><a href="#">Mixpanel</a></li>
-                        <li><a href="#">A Thinking Ape</a></li>
-                        <li><a href="#">Poll Everywhere</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="links-section">
-                <div class="links-column">
-                    <h4>You Also Should Read...</h4>
-                    <ul>
-                        <li><a href="#">Paul Graham</a></li>
-                        <li><a href="#">Heri Treeger</a></li>
-                        <li><a href="#">Dustin Curtis</a></li>
-                        <li><a href="#">Joseph Walla</a></li>
-                        <li><a href="#">Venkatesh Rao</a></li>
-                        <li><a href="#">Stephanie Lim</a></li>
-                    </ul>
-                </div>
-                <div class="links-column">
-                    <ul style="margin-top: 28px;">
-                        <li><a href="#">Alexis Ohanian</a></li>
-                        <li><a href="#">Paul Buchheit</a></li>
-                        <li><a href="#">Justin Kan</a></li>
-                        <li><a href="#">Kevin Simler</a></li>
-                        <li><a href="#">Brad Gessler</a></li>
-                        <li><a href="#">Aaron Harris</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="tags-section">
-                <h3 class="tags-title">
-                    Tags
-                    <span class="tags-note">Content tags</span>
-                </h3>
-                <div class="tags">
-                    <a href="#" class="tag">product design (3)</a>
-                    <a href="#" class="tag">startups (1)</a>
-                    <a href="#" class="tag">music (3)</a>
-                    <a href="#" class="tag">food (2)</a>
-                    <a href="#" class="tag">apple (3)</a>
-                </div>
-                <p style="margin-top: 15px; font-size: 14px;"><a href="#" style="color: #4267B2; text-decoration: none;">See all 179 tags</a></p>
-            </section>
-        </main>
-
-        <footer>
-            <div style="background: #666; color: white; padding: 10px; font-size: 12px;">
-                POSTHAVEN
+            <h1 class="page-title">Essays</h1>
+            
+            <div class="intro-text">
+                If you're not sure which to read, try <a href="#how-to-do-great-work">How to Do Great Work</a>, 
+                <a href="#having-kids">Having Kids</a>, or <a href="#how-to-lose-time-and-money">How to Lose Time and Money</a>.
             </div>
-        </footer>
+
+            <ul class="essay-list">
+                <li class="essay-item">
+                    <a href="articles/article-number-one.htmls" class="essay-link">The Shape of the Essay Field</a>
+                </li>
+                 <li class="essay-item">
+                    <a href="#" class="essay-link">Essay number 2</a>
+                    </li>
+                 <li class="essay-item">
+                    <a href="#" class="essay-link">Essay number 3</a>
+                </li>
+            </ul>
+        </main>
     </div>
 </body>
 </html>
